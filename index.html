@@ -2,18 +2,17 @@
 layout: default
 title: Jenny Shi's Website
 ---
-<div style = "padding-left: 60px;">
 
-<h1>Coming Soon! <small>hopefully...</small></h1>
+<div class="container">
+	<div class="page-header">
+		<h1>Coming Soon! <small>hopefully...</small></h1>
+	</div>
 
-<div class="posts">
-<ul>
-	{% for post in site.posts %}
-    	<li>{{ post.date | date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
-</div>
-
-<img src="/images/jennpeare.jpg" width="400" class="img-responsive">
+	<ul>
+		{% for post in site.posts %}
+			<li>{{ post.date | date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
+	<img src="/images/jennpeare.jpg" width="300" class="img-responsive">
 
 </div>
