@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">  
-{% include head.html %}
-	<body>
-		{% include navbar.html %}		
-    	{{ content }}
-		{% include footer.html %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
-    	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    	<!-- Include all compiled plugins (below), or include individual files as needed -->
-    	<script src="/js/bootstrap.min.js"></script>
-  	</body>
+  {% include head.html %}
+
+  <body class="theme-base-08">
+
+    {% include sidebar.html %}
+
+    <div class="content container">
+      {{ content }}
+    </div>
+
+  </body>
 </html>
