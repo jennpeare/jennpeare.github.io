@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java multithreading: Noodle Gourmet edition
+title: Java multithreading - Noodle Gourmet edition
 ---
 
 It's the night before my Software Methodology exam, Vicki and I are hungry and decided to order food from Noodle Gourmet, and I think I am having too much fun learning how thread synchronization works in Java.
