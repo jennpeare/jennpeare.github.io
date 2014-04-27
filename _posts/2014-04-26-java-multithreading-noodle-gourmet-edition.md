@@ -23,7 +23,7 @@ class Round {
 	boolean available = false;
 	
 	public synchronized void ask(String msg) {
-		if (available) {
+		while (available) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -37,7 +37,7 @@ class Round {
 	}
 	
 	public synchronized void answer(String msg) {
-		if (!available) {
+		while (!available) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -74,7 +74,7 @@ class Jenny implements Runnable {
 class Vicki implements Runnable {
 	
 	Round r;
-	String[] talk = { "Fish cake" , "Would you like some? :P", 
+	String[] talk = { "Fish cake." , "Would you like some? :P", 
 			"LOLOL." };
 	
 	public Vicki(Round r) {
@@ -96,7 +96,7 @@ When you compile and run the above code, you'll get this little conversation:
 
 ```
 Jenny: What are you eating?
-Vicki: Fish cake
+Vicki: Fish cake.
 Jenny: Ewww.
 Vicki: Would you like some? :P
 Jenny: I politely decline your offer. :P
