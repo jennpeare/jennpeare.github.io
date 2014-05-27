@@ -7,7 +7,7 @@ It's the night before my Software Methodology exam, Vicki and I are hungry and d
 
 (For those of you who don't know me: Vicki is my flatmate and partner in crime, and I detest all seafood hahaha)
 
-```
+{% highlight ruby linenos %}
 public class Conversation {
 	
 	public static void main(String[] args) {
@@ -90,7 +90,7 @@ class Vicki implements Runnable {
 	}
 	
 }
-```
+{% endhighlight %}
 
 When you compile and run the above code, you'll get this little conversation:
 
