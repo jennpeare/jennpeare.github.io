@@ -2,6 +2,10 @@
   GENERAL
 *************************************/
 
+html,
+body {
+  height: 100%;
+}
 
 /*************************************
   NAVBAR
@@ -64,17 +68,24 @@ button.navbar-toggle {
   FOOTER
 *************************************/
 
-.footer {
-  margin-top: 30px;
-  padding: 20px 0;
-  color: #777;
-  text-align: center;
-  background-color: #f8f8f8;
-  border-top: 1px solid #e7e7e7;
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px;
 }
 
-.footer p:last-child {
-  margin-bottom: 0;
+.push,
+.footer {
+  height: 100px;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  color: #777;
+  padding: 15px 0;
+  text-align: center;
 }
 
 .footer a {
