@@ -23,16 +23,36 @@
 	transition: .5s;
 }
 
+/*************************************
+	SITE ICONS
+*************************************/
+
 .flaticon-home63:before {
 	content: "\e002";
 	font-size: 24px;
 	margin: 5px;
 }
 
+.flaticon-tag31:before {
+	content: "\e007";
+	font-size: 10px;
+	margin: 0 5px 0 0;
+}
+
+.flaticon-new67:before {
+	content: "\e005";
+}
+
+/*************************************
+	SOCIAL MEDIA ICONS
+*************************************/
+
+/* Facebook */
 .flaticon-facebook7:before {
 	content: "\e000";
 }
 
+/* Github */
 .flaticon-github7:before {
 	content: "\e001";
 }
@@ -41,6 +61,7 @@
 	color: #000;
 }
 
+/* Instagram */
 .flaticon-instagram13:before {
 	content: "\e003";
 }
@@ -49,6 +70,7 @@
 	color: #9d6f42;
 }
 
+/* Linkedin */
 .flaticon-linkedin2:before {
 	content: "\e004";
 }
@@ -57,10 +79,7 @@
 	color: #007bb6;
 }
 
-.flaticon-new67:before {
-	content: "\e005";
-}
-
+/* Pinterest */
 .flaticon-pinterest11:before {
 	content: "\e006";
 }
@@ -69,16 +88,18 @@
 	color: #cb2027;
 }
 
+/* Tumblr */
 .flaticon-tumblr7:before {
-	content: "\e007";
+	content: "\e008";
 }
 
 .flaticon-tumblr7:hover {
 	color: #32506d;
 }
 
+/* Twitter */
 .flaticon-twitter12:before {
-	content: "\e008";
+	content: "\e009";
 }
 
 .flaticon-twitter12:hover {

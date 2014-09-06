@@ -1,9 +1,12 @@
 ---
 layout: post
 title: the magic of "space"
+tags: translation
 ---
 
-<a href="http://www.flickr.com/photos/sparklingworld/6881348854/" target="_blank"><img src="http://4.bp.blogspot.com/-gY4tKEjFtac/T4KLl2h8gwI/AAAAAAAAAY8/PRI8vXa_nxI/s1600/shinto.jpg" width="600"></a>
+<a href="http://www.flickr.com/photos/sparklingworld/6881348854/" target="_blank">
+  <img class="img-responsive img-rounded" src="http://4.bp.blogspot.com/-gY4tKEjFtac/T4KLl2h8gwI/AAAAAAAAAY8/PRI8vXa_nxI/s1600/shinto.jpg">
+</a>
 
 This picture of a Shinto shrine reminds me of a passage from Ashin’s book “Escape to Japan” — architecture and space from the point of view of an interior designs major. I really think this was the main reason why for a while, I wanted to become an interior designer or architect…until I realized that I didn’t have an art portfolio or the necessary math/physics skills required for those majors. Haha :P
 

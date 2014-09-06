@@ -59,10 +59,92 @@ button.navbar-toggle {
 /*************************************
   BLOG
 *************************************/
-#archive-list li:hover {
-  cursor: pointer;
+
+.post-date {
+  border: 1px solid #777;
+  border-radius: 4px;
+  background-color: #777;
+  color: #fff;
+  display: inline;
+  float: left;
+  height: 70px;
+  margin: 25px 20px 0 0;
+  padding-top: 7px;
+  text-align: center;
+  width: 100px;
 }
 
+.post-date-day {
+  margin: 0;
+}
+
+.post-title-box {
+  float: left;
+  margin: 25px 0 0;
+  width: 81.61%;
+}
+
+.post-title {
+  border-bottom: 1px solid #eee;
+  margin: 0 0 10px 0;
+  padding-bottom: 5px;
+  word-wrap: break-word;
+}
+
+.post-tags {
+  margin: 0;
+  font-size: 11px;
+  color: #777;
+}
+
+.post-tags .tag {
+  margin: 0 3px;
+}
+
+.post-content-preview {
+  clear: both;
+  padding: 20px 0 0;
+  height: 100%;
+}
+
+.post-read-more {
+  padding: 5px 0 30px;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+
+  .post-date {
+    border: 0;
+    display: block;
+    float: none;
+    font-size: 12px;
+    height: 50px;
+    margin: 20px 0 0 0;
+    padding-top: 7px;
+    text-align: center;
+    width: initial;
+  }
+
+  .post-date-day {
+    font-size: 18px
+  }
+
+  .post-title-box {
+    float: none;
+    margin: 10px 0 0;
+    width: 100%;
+  }
+
+  .post-title {
+    font-size: 24px;
+  }
+
+  .post-content-preview {
+    padding: 10px 0 0;
+  }
+
+}
 
 /*************************************
   FOOTER
