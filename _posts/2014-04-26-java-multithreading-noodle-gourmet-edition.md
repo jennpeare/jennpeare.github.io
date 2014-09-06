@@ -7,9 +7,11 @@ It's the night before my Software Methodology exam, Vicki and I are hungry and d
 
 (For those of you who don't know me: Vicki is my flatmate and partner in crime, and I detest all seafood hahaha)
 
-{% highlight ruby linenos %}
+<!-- more -->
+
+{% highlight java linenos %}
 public class Conversation {
-	
+
 	public static void main(String[] args) {
 		Round r = new Round();
 		new Jenny(r);
@@ -19,9 +21,9 @@ public class Conversation {
 }
 
 class Round {
-	
+
 	boolean available = false;
-	
+
 	public synchronized void ask(String msg) {
 		while (available) {
 			try {
@@ -30,12 +32,12 @@ class Round {
 				e.printStackTrace();
 			}
 		}
-		System.out.println(Thread.currentThread().getName() + 
+		System.out.println(Thread.currentThread().getName() +
 				": " + msg);
 		available = true;
 		notify();
 	}
-	
+
 	public synchronized void answer(String msg) {
 		while (!available) {
 			try {
@@ -44,7 +46,7 @@ class Round {
 				e.printStackTrace();
 			}
 		}
-		System.out.println(Thread.currentThread().getName() + 
+		System.out.println(Thread.currentThread().getName() +
 				": " + msg);
 		available = false;
 		notify();
@@ -52,11 +54,11 @@ class Round {
 }
 
 class Jenny implements Runnable {
-	
+
 	Round r;
-	String[] talk = { "What are you eating?" , "Ewww.", 
+	String[] talk = { "What are you eating?" , "Ewww.",
 			"I politely decline your offer. :P" };
-	
+
 	public Jenny(Round r) {
 		this.r = r;
 		new Thread(this, "Jenny").start();
@@ -68,15 +70,15 @@ class Jenny implements Runnable {
 			r.ask(s);
 		}
 	}
-	
+
 }
 
 class Vicki implements Runnable {
-	
+
 	Round r;
-	String[] talk = { "Fish cake." , "Would you like some? :P", 
+	String[] talk = { "Fish cake." , "Would you like some? :P",
 			"LOLOL." };
-	
+
 	public Vicki(Round r) {
 		this.r = r;
 		new Thread(this, "Vicki").start();
@@ -88,7 +90,7 @@ class Vicki implements Runnable {
 			r.answer(s);
 		}
 	}
-	
+
 }
 {% endhighlight %}
 

@@ -1,19 +1,23 @@
 # Dependencies
-markdown:         redcarpet
-pygments:         true
+markdown: redcarpet
+pygments: true
+
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
 # Permalinks
-permalink:        pretty
+permalink: pretty
+relative_permalinks: true
 
 # Setup
-title:            Jenny
-tagline:          'always fobby & fruity'
-description:      'always fobby & fruity'
-url:              http://jennyshi.com
+title: Jenny
+tagline: 'always fobby & fruity'
+description: 'always fobby & fruity'
+url: http://jennyshi.com
 
 author:
-  name:           'Jenny Shi'
+  name: 'Jenny Shi'
 
 
-paginate:         5
-paginate_path:    "blog/page:num"
+paginate: 5
+paginate_path: "blog/page:num"
