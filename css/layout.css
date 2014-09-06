@@ -1,0 +1,83 @@
+/*************************************
+  GENERAL
+*************************************/
+
+
+/*************************************
+  NAVBAR
+*************************************/
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-brand,
+.navbar-header,
+.navbar-toggle,
+.navbar-nav li a {
+    line-height: 70px;
+    height: 70px;
+    padding-top: 0;
+}
+
+button.navbar-toggle {
+  height: 40px;
+  padding-top: 8px;
+  margin-top: 15px;
+}
+
+/*************************************
+  HEADER JUMBOTRON
+*************************************/
+
+.header {
+  background: #232e3f url("/img/header.jpg") no-repeat fixed center center;
+  background-size: cover;
+  height: 250px;
+}
+
+.header-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.overlay {
+  background: rgba(35,46,63,.65);
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 70px;
+  z-index: 1;
+}
+
+/*************************************
+  BLOG
+*************************************/
+#archive-list li:hover {
+  cursor: pointer;
+}
+
+
+/*************************************
+  FOOTER
+*************************************/
+
+.footer {
+  margin-top: 30px;
+  padding: 20px 0;
+  color: #777;
+  text-align: center;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+}
+
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer a {
+  color: #777;
+  text-decoration: none;
+}

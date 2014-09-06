@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Archive</h3>
+      <ul class="list-group">
+        {% capture currentmonth %}{{site.time | date: "%B"}}{% endcapture %}
+        {% for post in site.posts %}
+          {% capture month %}{{post.date | date: "%B"}}{% endcapture %}
+          {% capture monthyear %}{{post.date | date: "%B %Y"}}{% endcapture %}
+          {% capture monthyearid %}{{post.date | date: "%b%y"}}{% endcapture %}
+            {% if monthyear != year %}
+              {% unless forloop.first %}</ul></li>{% endunless %}
+              <li class="list-group-item" data-toggle="collapse" data-target="#{{ monthyearid }}">{{ monthyear }}
+              <ul id="{{ monthyearid }}" class="collapse {% if month == currentmonth %}in{% endif %}">
+              {% capture year %}{{ monthyear }}{% endcapture %}
+            {% endif %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="col-md-7 col-md-offset-1">
+      {{ content }}
+    </div>
+  </div>
+</div>
