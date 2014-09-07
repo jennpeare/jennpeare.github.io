@@ -1,7 +1,9 @@
 ---
 layout: post
 title: the magic of "space"
-tags: translation
+tags:
+- translation
+- japan
 ---
 
 <a href="http://www.flickr.com/photos/sparklingworld/6881348854/" target="_blank">

@@ -16,12 +16,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="{% if page.title == "Home" %} active{% endif %}"><a href="/"><span class="flaticon-home63"></span></a></li>
         {% for node in site.pages %}
-          {% if node.title != null %}
-            {% if node.layout != "default" %}
+          {% if node.nav != null %}
               <li class="{% if page.url == node.url %} active{% endif %}">
                 <a href="{{ node.url }}">{{ node.title }}</a>
               </li>
-            {% endif %}
           {% endif %}
         {% endfor %}
       </ul>

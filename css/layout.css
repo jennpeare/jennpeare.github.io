@@ -91,6 +91,10 @@ button.navbar-toggle {
   word-wrap: break-word;
 }
 
+.post-title a:hover {
+  text-decoration: none;
+}
+
 .post-tags {
   margin: 0;
   font-size: 11px;
@@ -101,7 +105,8 @@ button.navbar-toggle {
   margin: 0 3px;
 }
 
-.post-content-preview {
+.post-content-preview,
+.post-content {
   clear: both;
   padding: 20px 0 0;
   height: 100%;
@@ -166,6 +171,7 @@ button.navbar-toggle {
   background-color: #f8f8f8;
   border-top: 1px solid #e7e7e7;
   color: #777;
+  margin-top: 30px;
   padding: 15px 0;
   text-align: center;
 }
@@ -173,4 +179,13 @@ button.navbar-toggle {
 .footer a {
   color: #777;
   text-decoration: none;
+}
+
+@media (max-width: 767px) {
+
+  .footer span::before {
+    font-size: 24px;
+    margin: 10px;
+  }
+
 }
