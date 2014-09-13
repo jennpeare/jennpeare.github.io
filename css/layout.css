@@ -60,6 +60,12 @@ button.navbar-toggle {
   BLOG
 *************************************/
 
+.monthyear,
+.monthyear:hover {
+    color: #000;
+/*    text-decoration: none;*/
+}
+
 .post-date {
   border: 1px solid #777;
   border-radius: 4px;

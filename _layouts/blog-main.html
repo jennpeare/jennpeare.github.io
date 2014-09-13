@@ -14,7 +14,7 @@ layout: default
           {% capture monthyearid %}{{post.date | date: "%b%y"}}{% endcapture %}
             {% if monthyear != year %}
               {% unless forloop.first %}</ul></li>{% endunless %}
-              <li class="list-group-item" data-toggle="collapse" data-target="#{{ monthyearid }}">{{ monthyear }}
+              <li class="list-group-item"><a class="monthyear" data-toggle="collapse" data-target="#{{ monthyearid }}">{{ monthyear }}</a>
               <ul id="{{ monthyearid }}" class="collapse {% if month == currentmonth %}in{% endif %}">
               {% capture year %}{{ monthyear }}{% endcapture %}
             {% endif %}
@@ -25,7 +25,6 @@ layout: default
 
     <div class="col-md-7 col-md-offset-1">
       {{ content }}
-
       <div class="back-to-top"><a href="#top"><span class="glyphicon glyphicon-chevron-up"></span></a></div>
     </div>
   </div>
