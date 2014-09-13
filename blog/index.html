@@ -16,7 +16,7 @@ nav: true
       {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
       {% assign tag_words = site_tags | split:',' | sort %}
       {% for tag in tag_words %}
-        <span class="tag"><a href="/tag/{{ tag }}">{{ tag }}</a></span>
+        <span class="tag">{{ tag }}</span>
       {% endfor %}
     </p>
   </div>
@@ -28,7 +28,7 @@ nav: true
     {% endif %}
   </div>
   <div class="post-read-more">
-    <a href="{{ post.url }}"<button type="button" class="btn btn-info">Read More &raquo;</button></a>
+    <a href="{{ post.url }}">Read More &raquo;</a>
   </div>
 {% endfor %}
 
