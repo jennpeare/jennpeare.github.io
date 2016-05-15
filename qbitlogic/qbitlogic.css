@@ -5,11 +5,11 @@ Creation date: 15/05/2016 05:26
 
 @font-face {
   font-family: "Flaticon";
-  src: url("/fonts/qbitlogic.eot");
-  src: url("/fonts/qbitlogic.eot?#iefix") format("embedded-opentype"),
-  url("/fonts/qbitlogic.woff") format("woff"),
-  url("/fonts/qbitlogic.ttf") format("truetype"),
-  url("/fonts/qbitlogic.svg#Flaticon") format("svg");
+  src: url("qbitlogic.eot");
+  src: url("qbitlogic.eot?#iefix") format("embedded-opentype"),
+  url("qbitlogic.woff") format("woff"),
+  url("qbitlogic.ttf") format("truetype"),
+  url("qbitlogic.svg#Flaticon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +17,7 @@ Creation date: 15/05/2016 05:26
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Flaticon";
-    src: url("/fonts/qbitlogic.svg#Flaticon") format("svg");
+    src: url("qbitlogic.svg#Flaticon") format("svg");
   }
 }
 
