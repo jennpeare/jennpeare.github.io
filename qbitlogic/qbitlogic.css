@@ -30,8 +30,8 @@ Creation date: 15/05/2016 05:26
   margin: 0;
   line-height: 1;
   text-transform: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .flaticon-analysis:before { content: "\f100"; }
