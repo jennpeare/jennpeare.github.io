@@ -21,12 +21,17 @@ Creation date: 15/05/2016 05:26
   }
 }
 
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+[class^="flaticon-"],
+[class*=" flaticon-"] {
   font-family: Flaticon;
-  font-size: 20px;
+  font-size: normal;
   font-style: normal;
-  margin-left: 20px;
+  font-variant: normal;
+  margin: 0;
+  line-height: 1;
+  text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .flaticon-analysis:before { content: "\f100"; }
