@@ -1,0 +1,183 @@
+I"�#<p>It’s the night before my Software Methodology exam, Vicki and I are hungry and decided to order food from Noodle Gourmet…and I think I am having too much fun learning how thread synchronization works in Java.</p>
+
+<p>(For those of you who don’t know me: Vicki is my flatmate and partner in crime, and I detest all seafood hahaha)</p>
+
+<!-- more -->
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Conversation</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">Round</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Round</span><span class="o">();</span>
+		<span class="k">new</span> <span class="nf">Jenny</span><span class="o">(</span><span class="n">r</span><span class="o">);</span>
+		<span class="k">new</span> <span class="nf">Vicki</span><span class="o">(</span><span class="n">r</span><span class="o">);</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Round</span> <span class="o">{</span>
+
+	<span class="kt">boolean</span> <span class="n">available</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">ask</span><span class="o">(</span><span class="nc">String</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">while</span> <span class="o">(</span><span class="n">available</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">try</span> <span class="o">{</span>
+				<span class="n">wait</span><span class="o">();</span>
+			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span>
+				<span class="s">": "</span> <span class="o">+</span> <span class="n">msg</span><span class="o">);</span>
+		<span class="n">available</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="n">notify</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">answer</span><span class="o">(</span><span class="nc">String</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">while</span> <span class="o">(!</span><span class="n">available</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">try</span> <span class="o">{</span>
+				<span class="n">wait</span><span class="o">();</span>
+			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span>
+				<span class="s">": "</span> <span class="o">+</span> <span class="n">msg</span><span class="o">);</span>
+		<span class="n">available</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="n">notify</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Jenny</span> <span class="kd">implements</span> <span class="nc">Runnable</span> <span class="o">{</span>
+
+	<span class="nc">Round</span> <span class="n">r</span><span class="o">;</span>
+	<span class="nc">String</span><span class="o">[]</span> <span class="n">talk</span> <span class="o">=</span> <span class="o">{</span> <span class="s">"What are you eating?"</span> <span class="o">,</span> <span class="s">"Ewww."</span><span class="o">,</span>
+			<span class="s">"I politely decline your offer. :P"</span> <span class="o">};</span>
+
+	<span class="kd">public</span> <span class="nf">Jenny</span><span class="o">(</span><span class="nc">Round</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
+		<span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"Jenny"</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">talk</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">r</span><span class="o">.</span><span class="na">ask</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Vicki</span> <span class="kd">implements</span> <span class="nc">Runnable</span> <span class="o">{</span>
+
+	<span class="nc">Round</span> <span class="n">r</span><span class="o">;</span>
+	<span class="nc">String</span><span class="o">[]</span> <span class="n">talk</span> <span class="o">=</span> <span class="o">{</span> <span class="s">"Fish cake."</span> <span class="o">,</span> <span class="s">"Would you like some? :P"</span><span class="o">,</span>
+			<span class="s">"LOLOL."</span> <span class="o">};</span>
+
+	<span class="kd">public</span> <span class="nf">Vicki</span><span class="o">(</span><span class="nc">Round</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
+		<span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"Vicki"</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">talk</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">r</span><span class="o">.</span><span class="na">answer</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>When you compile and run the above code, you’ll get this little conversation:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jenny: What are you eating?
+Vicki: Fish cake.
+Jenny: Ewww.
+Vicki: Would you like some? :P
+Jenny: I politely decline your offer. :P
+Vicki: LOLOL.
+</code></pre></div></div>
+<p>Anyways, back to studying. D:</p>
+:ET
